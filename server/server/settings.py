@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'rest_framework',
+
+    # Local
+    'contracts',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +104,22 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+# REST framework
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # Permissions: http://www.django-rest-framework.org/api-guide/permissions/
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+    ],
+    'UNAUTHENTICATED_USER': None,
+    'PAGE_SIZE': 100
+}
 
 
 # Internationalization

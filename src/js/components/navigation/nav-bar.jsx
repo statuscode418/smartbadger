@@ -7,7 +7,7 @@ const NavBar = props => {
     <div className={`Navbar ${props.className || ''}`}>
       <NavBarLink
         links={[
-          { url: '/badge', text: 'make badge' },
+          { url: '/badge', text: 'create' },
           { url: '/explorer', text: 'explore' }
         ]}
       />

@@ -12,7 +12,7 @@ const NavBarLink = props => {
             props.location.pathname.indexOf(link.url) > -1 ? 'is-active' : ''
           }`}
         >
-          {link.text}&nbsp; | &nbsp;
+          {link.text}&nbsp;
         </Link>
       </li>
     )

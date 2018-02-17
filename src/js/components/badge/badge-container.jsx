@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import 'styles/components/home'
 
-class HomeContainer extends React.Component {
+class BadgeContainer extends React.Component {
 
 
   componentWillReceiveProps = async newProps => {
@@ -31,10 +31,9 @@ class HomeContainer extends React.Component {
     return (
       <div className='Home'>
         <div className='Home-content'>
-          <h2>Main Content Here</h2>
+          <h2>Create a badge</h2>
           <p>
-            Below is an overview of some basic elements used throughout the
-            starterkit.
+            make an input
           </p>
         </div>
       </div>
@@ -54,4 +53,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(BadgeContainer)

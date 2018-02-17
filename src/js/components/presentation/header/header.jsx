@@ -4,7 +4,6 @@ import { withRouter } from 'react-router'
 import NavBar from 'components/navigation/nav-bar'
 
 import Logo from 'presentation/logos/logo'
-// import SubHeader from './sub-header'
 
 import 'styles/components/header.scss'
 
@@ -14,12 +13,10 @@ const Header = props => {
       <Link to='/'>
         <Logo full={true} />
       </Link>
-      <h1> V </h1>
-      <NavBar user={props.user} />
+      <h1> Badger </h1>
+      <NavBar />
     </header>
   )
 }
 
 export default withRouter(Header)
-
-//< SubHeader openModal = { props.openModal } user = { props.user } />

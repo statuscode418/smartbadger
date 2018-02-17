@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 
 import LandingContainer from 'components/landing'
 import LoadingScreen from 'layout/loading-screen'
-import HomeContainer from 'components/home/home-container'
+import BadgeContainer from 'components/badge/badge-container'
+import ExploreContainer from 'components/explore/explore-container'
 import FourOhFour from 'pages/four-oh-four.jsx'
 
 const MainRouter = ({ user }) => {
@@ -13,8 +14,8 @@ const MainRouter = ({ user }) => {
       <main id='main-content'>
         <Switch>
           <Route exact path='/' component={LandingContainer} />
-          <Route exact path='/explorer' component={HomeContainer} />
-          <Route exact path='/badge' component={HomeContainer} />
+          <Route exact path='/explorer' component={ExploreContainer} />
+          <Route exact path='/badge' component={BadgeContainer} />
           <Route path='*' component={FourOhFour} />
         </Switch>
       </main>

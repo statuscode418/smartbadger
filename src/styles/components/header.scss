@@ -1,0 +1,34 @@
+/* header */
+
+@import '../core/_variables';
+@import '../core/_mixins';
+
+.Header {
+  align-items: center;
+  background-color: $white;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row;
+  height: $header-height;
+  justify-content: space-between;
+  padding: 0 0 0 $pad-mar-med;
+  position: relative;
+  z-index: $z-20;
+}
+
+// .Header > * {
+//   flex: 1 50%;
+// }
+
+.Nav-container {
+  align-items: center;
+  flex-flow: row;
+  z-index: $z-20;
+}
+
+.Navbar-link {
+  flex-grow: 1;
+}
+
+.Navbar {
+}

@@ -9,7 +9,8 @@ const initialState = {
     freezeContent: false,
     width: null,
     height: null
-  }
-};
+  },
+  badge: ''
+}
 
 export default initialState;

@@ -9,7 +9,7 @@ import BadgeContainer from 'components/badge/badge-container'
 import ExploreContainer from 'components/explore/explore-container'
 import FourOhFour from 'pages/four-oh-four.jsx'
 
-const MainRouter = ({ user }) => {
+const MainRouter = () => {
     return (
       <main id='main-content'>
         <Switch>

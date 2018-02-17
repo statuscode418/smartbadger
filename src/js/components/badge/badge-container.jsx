@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import { updateBadge } from 'redux-store/actions/badgeActions'
 import 'styles/components/home'
 import BadgeFormContainer from '../forms/badge-form/badge-form-container'
 
@@ -33,9 +34,8 @@ class BadgeContainer extends React.Component {
       <div className='Home'>
         <div className='Home-content'>
           <h2>Create a badge</h2>
-          <p>
-            <BadgeFormContainer/>
-          </p>
+          <BadgeFormContainer updateBadge={updateBadge}/>
+          {this.props.badge}
         </div>
       </div>
     )
@@ -44,13 +44,13 @@ class BadgeContainer extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getUser: () => dispatch(getUser())
+    updateBadge: (address) => dispatch(updateBadge(address))
   }
 }
 
 const mapStateToProps = state => {
   return {
-    // user: state.user
+    badge: state.badge
   }
 }
 

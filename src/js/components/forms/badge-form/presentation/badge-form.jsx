@@ -6,18 +6,18 @@ import {
 
 const BadgeForm = props => {
   const formData = props.formData || {
-    textinput: null
+    address: null
   }
 
   return (
     <form id='badge-form' className='Form AuthForm' noValidate>
       <h3 className='AuthForm-header'>Enter contract address to obtain badge</h3>
       <TextInput
-        id='textinput'
-        name='textinput'
+        id='address'
+        name='address'
         label=''
         showLabel
-        value={formData.textinput ? formData.textinput.value : ''}
+        value={formData.address ? formData.address.value : ''}
         onChange={props.updateForm}
         placeholder='Enter contract address'
       />

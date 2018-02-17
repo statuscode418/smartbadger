@@ -8,19 +8,20 @@ import { addAlert } from 'redux-store/actions/alertActions'
 import BadgeForm from './presentation/badge-form'
 
 class BadgeFormContainer extends React.Component {
-  submitForm = async (formData, files, successCallback, failCallback) => {
-    try {
-      // const res = await this.props.createUser(formData)
-      this.rerouteAfterSubmit(res)
-    } catch (err) {
-      this.props.addAlert(err)
-      failCallback(err)
-    }
-  };
+
+  generateBadge (contractAddress) {
+    return 'im a badge:' + contractAddress
+  }
+
+  submitForm = (formData) => {
+    console.log('FORM DATA', formData)
+    const badge = this.generateBadge(formData.address)
+    this.props.updateBadge(badge)
+  }
 
   render() {
     const fieldNames = [
-      'textinput',
+      'address',
     ]
 
     const validationHelp = {
@@ -53,7 +54,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    user: state.user || {}
+    badge: state.badge || ''
   }
 }
 

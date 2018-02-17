@@ -16,6 +16,6 @@ class ContractViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
         if not is_address(pk):
-            raise ValidationError("Address is improperly formatted")
+            raise ValidationError("Address must be a 20 byte hexidecimal or byte string, with or without prefix and padding")
         serializer = ContractSerializer(Contract())
         return Response(serializer.data)

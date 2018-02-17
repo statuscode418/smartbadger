@@ -5,13 +5,9 @@ import { Form } from 'bloom-forms'
 
 import { addAlert } from 'redux-store/actions/alertActions'
 
-import ExampleForm from './presentation/example-form'
+import BadgeForm from './presentation/badge-form'
 
-class ExampleFormContainer extends React.Component {
-  rerouteAfterSubmit = () => {
-    this.props.history.push('/lending')
-  };
-
+class BadgeFormContainer extends React.Component {
   submitForm = async (formData, files, successCallback, failCallback) => {
     try {
       // const res = await this.props.createUser(formData)
@@ -25,36 +21,23 @@ class ExampleFormContainer extends React.Component {
   render() {
     const fieldNames = [
       'textinput',
-      'password',
-      'checkbox',
-      'radio',
-      'radio2',
-      'date',
-      'currency',
-      'select',
-      'select2',
-      'toggle',
-      'file-simple',
-      'file-simple-2',
-      'file-droppable',
-      'onlyBloop'
     ]
 
     const validationHelp = {
       dictionary: {
-        'must-equal-bloop': testData =>
-          testData !== 'bloop' ? 'Sorry, this field has to be "bloop."' : null
+        'must-be-json': testData =>
+          testData !== 'bloop' ? 'Field is not valid JSON' : null
       }
     }
 
     return (
       <Form
-        id='example-form'
+        id='badge-form'
         fieldNames={fieldNames}
         submitForm={this.submitForm}
         validationHelp={validationHelp}
       >
-        <ExampleForm />
+        <BadgeForm />
       </Form>
     )
   }
@@ -75,5 +58,5 @@ const mapStateToProps = state => {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(ExampleFormContainer)
+  connect(mapStateToProps, mapDispatchToProps)(BadgeFormContainer)
 )

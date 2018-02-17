@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import 'styles/components/home'
+import BadgeFormContainer from '../forms/badge-form/badge-form-container'
 
 class BadgeContainer extends React.Component {
 
@@ -33,7 +34,7 @@ class BadgeContainer extends React.Component {
         <div className='Home-content'>
           <h2>Create a badge</h2>
           <p>
-            make an input
+            <BadgeFormContainer/>
           </p>
         </div>
       </div>
@@ -49,7 +50,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    // user: state.user
   }
 }
 

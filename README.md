@@ -18,7 +18,7 @@ Ultimately, this app will serve as a source of contract verification, a visualiz
 
 Install python 3.5 or greater and virtualenv
 
-```py
+```sh
 virtualenv -p python3 .env
 source .env/bin/activate
 pip install -r requirements.txt
@@ -28,6 +28,13 @@ Add a `local_settings.py` file in the `/server/server` directory, alongside the 
 
 ```py
 PROVIDER_URL = '<http_provider_url>'
+```
+
+Install memcached and run:
+
+```sh
+brew install memcached
+memcached -p 11211
 ```
 
 

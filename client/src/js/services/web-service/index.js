@@ -18,4 +18,12 @@ export class WebService {
       throw new Error(err)
     }
   }
+  getActivityBadge = async (contractAddress) => {
+    try {
+      const res = await get(`/${contractAddress}/activity.svg`)
+      return Promise.resolve(res.data)
+    } catch (err) {
+      throw new Error(err)
+    }
+  }
 }

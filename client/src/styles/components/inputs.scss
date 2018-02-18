@@ -20,9 +20,12 @@ input[type='number'] {
 }
 
 .Input {
-  border-color: $med-gray;
-  border-radius: $border-radius;
   font-family: $main-font;
+  border: 1px solid #FFFFFF;
+  opacity: 0.4;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
 
   // gray out input placeholders
   &::-webkit-input-placeholder {
@@ -79,6 +82,10 @@ input[type='number'] {
   }
 
   &--file {
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
 

@@ -3,6 +3,7 @@
 @import 'core/_mixins';
 @import 'core/_animations';
 @import 'core/_transitions';
+@import 'core/_badger';
 
 #root {
   left: 0;
@@ -13,7 +14,7 @@
 
 body {
   color: $dark-gray;
-  font-family: $main-font;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
 }
 
@@ -25,6 +26,13 @@ main {
   display: grid;
   grid-template: minmax($header-height, auto) 1fr 50px / 1fr;
   height: minmax(100vh, 100%);
+  background: rgba(31,53,72,1);
+  background: -moz-linear-gradient(-45deg, rgba(31,53,72,1) 0%, rgba(95,143,184,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(31,53,72,1)), color-stop(100%, rgba(95,143,184,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(31,53,72,1) 0%, rgba(95,143,184,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(31,53,72,1) 0%, rgba(95,143,184,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(31,53,72,1) 0%, rgba(95,143,184,1) 100%);
+  background: linear-gradient(135deg, rgba(31,53,72,1) 0%, rgba(95,143,184,1) 100%);
 }
 
 /* start actual styles */

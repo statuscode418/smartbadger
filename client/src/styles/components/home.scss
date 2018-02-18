@@ -6,11 +6,37 @@ HOME
 
 .Home {
   display: grid;
-  grid-template: 1fr / #{$sidebar-width} 1fr;
-  min-height: calc(100vh - #{$header-height});
-  width: 100vw;
+  // grid-template: 1fr / #{$sidebar-width} 1fr;
+  height: calc(100vh - #{$header-height});
+  // width: 100vw;
+  margin: 0 auto;
+
 
   &-content {
-    border-left: 1px solid $light-gray;
+    max-width: 40%;
+    margin: auto;
+    text-align: center;
+  }
+
+  blockquote {
+    border: none;
+    background: #FFFFFF;
+    opacity: 0.6;
+    padding:7
+    px;
+  }
+
+  code {
+    white-space: nowrap;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    display: grid;
+    grid-template: 1fr / #{$sidebar-width} 1fr;
+    color: #2599FF;
+  }
+
+  h3 {
+    padding-top: 35px;
+    padding-bottom: 10px;
   }
 }

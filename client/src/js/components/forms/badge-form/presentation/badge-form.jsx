@@ -11,7 +11,7 @@ const BadgeForm = props => {
 
   return (
     <form id='badge-form' className='Form AuthForm' noValidate>
-      <h3 className='AuthForm-header'>Enter contract address to obtain badge</h3>
+      <h4 className='AuthForm-header'>Enter contract address to obtain badge</h4>
       <TextInput
         id='address'
         name='address'
@@ -24,7 +24,7 @@ const BadgeForm = props => {
       <Button
         onClick={props.submitForm}
         contents='Submit Button'
-        className='Btn AuthForm-submit-button u-justify-center'
+        className='AuthForm-submit-button u-justify-center btn-badger'
       />
     </form>
   )

@@ -13,8 +13,6 @@ const Header = props => {
       <Link to='/'>
         <Logo full={true} />
       </Link>
-      <h1> Badger </h1>
-      <NavBar />
     </header>
   )
 }

@@ -95,7 +95,6 @@ class AppContainer extends React.Component {
         </a>
         <Header openModal={openModal} user={user} addAlert={addAlert} />
         <MainRouter />
-        <Footer />
         <Alert currentAlert={alerts[0]} hidden={!alerts[0]} />
         <Modal
           modalContents={modal && modal.modalContents}

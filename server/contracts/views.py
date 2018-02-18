@@ -37,10 +37,10 @@ MAX_RESULTS = 1000 # TODO May change
 def get_daily_activity(address):
     """
     Estimate a daily number of transactions for the given address.
-    Get the number of transactions using the contract. Possible API responses:
-    * API returns 1000 results (max) starting with the fromBlock
-    * APi returns less than the max results
-    * No results are returned
+
+    The etherscan API will return a max of 1000 results, so some
+    additional math is required.
+
     We will return None as an error condition, akin to "Unknown"
     """
     params = {
@@ -65,12 +65,12 @@ def get_daily_activity(address):
         newest = hex_to_date(results[-1]['timeStamp'])
         elapsed = (newest - oldest).seconds
         if not elapsed:
-            # This would only happen if 1000 transactions for this address
-            # happened in the same block, if so, return a big number
+            # This would only happen if this address hit the max transactions
+            # in the same block - amazing! If so, return a big number
             return 1e6
 
         # Otherwise estimate daily activity by the % of day it took
-        # to hit 10,000 transactions
+        # to hit the max transaction
         return (SECONDS_PER_DAY / elapsed) * len(results)
 
     # Otherwise we will estimate the daily activity in the past week
@@ -81,6 +81,7 @@ def get_daily_activity(address):
         # Should never happen, but don't divide by zero, ever
         return None
 
+    # Estimate the daily activity
     return (SECONDS_PER_DAY / elapsed) * len(results)
 
 

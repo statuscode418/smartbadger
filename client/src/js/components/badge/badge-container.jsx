@@ -7,7 +7,10 @@ import 'styles/components/home'
 import BadgeFormContainer from '../forms/badge-form/badge-form-container'
 
 class BadgeContainer extends React.Component {
-
+  state = {
+    badge: '',
+    markdown: ''
+  }
 
   componentWillReceiveProps = async newProps => {
     if (newProps.getUser && !this.props.getUser) {
@@ -29,13 +32,30 @@ class BadgeContainer extends React.Component {
     }
   };
 
+  updateBadge = (markdown, badge) => {
+    console.log(badge, markdown)
+    this.setState({
+      markdown,
+      badge
+    })
+  }
+
   render() {
+    const { badge, markdown } = this.state
+    const { svg, link } = badge
     return (
       <div className='Home'>
         <div className='Home-content'>
           <h2>Create a badge</h2>
-          <BadgeFormContainer updateBadge={updateBadge}/>
-          {this.props.badge}
+          <BadgeFormContainer updateBadge={this.updateBadge}/>
+          { badge && markdown && (
+            <div>
+              <h3> Your Badge: </h3>
+              <a href={ link } target='_blank' ><img src={ svg } alt='svg'/></a>
+              <h3> Markdown for README: </h3>
+              <blockquote> <code> {markdown} </code> </blockquote> 
+            </div>
+          )}
         </div>
       </div>
     )
@@ -44,7 +64,7 @@ class BadgeContainer extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateBadge: (address) => dispatch(updateBadge(address))
+    updateBadge: address => dispatch(updateBadge(address))
   }
 }
 

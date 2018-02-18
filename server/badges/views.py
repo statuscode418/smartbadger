@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views import View
 import web3
 
+from contracts.views import get_daily_activity
+
 
 class Badge(View):
     template = 'badges/sample.svg'
@@ -25,5 +27,33 @@ class BalanceBadge(Badge):
         balance = web3.Web3.fromWei(provider.eth.getBalance(address), 'ether')
         attrs = {
             'text': '{:.6f} Ether'.format(balance),
+        }
+        return render(request, self.template, attrs, content_type='image/svg+xml')
+
+
+def magnitude_format(number):
+    if number < 10:
+        return "{:.1f}".format(number)
+    if number < 1e3:
+        return "{:.0f}".format(number)
+    if number < 1e6:
+        return "{:.1f}k".format(number / 1e3)
+    return "{:,.0f}k".format(number / 1e3)
+
+
+class DailyTransactionsBadge(Badge):
+    """Returns an estimate of daily transactions."""
+    def get(self, request, address):
+        if not web3.Web3.isAddress(address):
+            attrs = {'text': 'Invalid Address'}
+            return render(request, self.template, attrs, content_type='image/svg+xml')
+
+        activity = get_daily_activity(address)
+        if activity is None:
+            attrs = {'text': 'Unknown Daily Txs'}
+            return render(request, self.template, attrs, content_type='image/svg+xml')
+
+        attrs = {
+            'text': '{} Daily Txs'.format(magnitude_format(activity)),
         }
         return render(request, self.template, attrs, content_type='image/svg+xml')

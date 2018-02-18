@@ -13,6 +13,7 @@ export class WebService {
   getBalanceBadge = async (contractAddress) => {
     try {
       const res = await get(`/${contractAddress}/balance.svg`)
+      console.log(res)
       return Promise.resolve(res.data)
     } catch (err) {
       throw new Error(err)
@@ -21,6 +22,7 @@ export class WebService {
   getActivityBadge = async (contractAddress) => {
     try {
       const res = await get(`/${contractAddress}/activity.svg`)
+      console.log(res)
       return Promise.resolve(res.data)
     } catch (err) {
       throw new Error(err)

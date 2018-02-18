@@ -45,13 +45,12 @@ class BadgeContainer extends React.Component {
     return (
       <div className='Home'>
         <div className='Home-content'>
-          <h2>Create a badge</h2>
+          <h2>CREATE A BADGE</h2>
           <BadgeFormContainer updateBadge={this.updateBadge}/>
           { badge && markdown && (
             <div>
-              <h3> Your Badge: </h3>
+              <h3> YOUR BADGE & MARKDOWN:  </h3>
               <a href={link} target='_blank' dangerouslySetInnerHTML={{ __html: svg}}></a>
-              <h3> Markdown for README: </h3>
               <blockquote> <code> {markdown} </code> </blockquote> 
             </div>
           )}

@@ -1,26 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 129.5 150" xml:space="preserve">
-<g id="Layer_1_1_">
-</g>
-<g id="Layer_2">
-	<g>
-		<g>
-			<g>
-				<path d="M1.2,49.7h7.9c0.6,0,1.2-0.5,1.2-1.2V18.8L46.9,45c0.4,0.3,1,0.3,1.4,0l6.8-4.9c0.3-0.2,0.5-0.6,0.5-0.9
-					c0-0.4-0.2-0.7-0.5-0.9L1.9,0.2C1.5,0,1.1-0.1,0.7,0.1c-0.4,0.2-0.6,0.6-0.6,1v47.4C0.1,49.2,0.6,49.7,1.2,49.7z"/>
-				<path d="M105.8,75c0-0.4-0.2-0.7-0.5-1L82.6,58c-0.4-0.3-0.9-0.3-1.4,0l-6.9,4.9c-0.3,0.2-0.5,0.6-0.5,0.9c0,0.4,0.2,0.7,0.5,1
-					L88.9,75l-78.6,56.1v-29.7c0-0.6-0.5-1.2-1.2-1.2H1.2c-0.6,0-1.2,0.5-1.2,1.2v47.4c0,0.4,0.2,0.8,0.6,1c0.2,0.1,0.3,0.1,0.5,0.1
-					s0.5,0,0.7-0.2L105.3,76C105.6,75.7,105.8,75.3,105.8,75z"/>
-				<path d="M128.2,100.3h-7.9c-0.6,0-1.2,0.5-1.2,1.2v29.7l-37.5-26.8c-0.4-0.3-0.9-0.3-1.4,0l-6.8,4.9c-0.3,0.2-0.5,0.6-0.5,0.9
-					c0,0.4,0.2,0.7,0.5,0.9l54.1,38.7c0.2,0.1,0.4,0.2,0.7,0.2c0.2,0,0.3,0,0.5-0.1c0.4-0.2,0.6-0.6,0.6-1v-47.4
-					C129.4,100.8,128.8,100.3,128.2,100.3z"/>
-				<path d="M128.7,0.1c-0.4-0.2-0.8-0.1-1.2,0.1L24.2,74c-0.3,0.2-0.5,0.6-0.5,0.9c0,0.4,0.2,0.7,0.5,0.9l22.9,16.4
-					c0.2,0.1,0.4,0.2,0.7,0.2s0.5,0,0.7-0.2l6.8-4.9c0.3-0.2,0.5-0.6,0.5-0.9c0-0.4-0.2-0.7-0.5-0.9L40.5,75l78.7-56.1v29.7
-					c0,0.6,0.5,1.2,1.2,1.2h7.9c0.6,0,1.2-0.5,1.2-1.2V1.2C129.4,0.7,129.1,0.3,128.7,0.1z"/>
-			</g>
-		</g>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="67px" viewBox="0 0 66 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-Copy-7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-34.000000, -23.000000)">
+        <g id="Group-2-Copy" transform="translate(34.000000, 25.000000)">
+            <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="19.5" cy="41.5" r="3.5"></circle>
+            <circle id="Oval-Copy" stroke="#FFFFFF" stroke-width="2" cx="46.5" cy="41.5" r="3.5"></circle>
+            <path d="M27.1666667,59.5 L39,59.5" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <path d="" id="Path" stroke="#979797"></path>
+            <g id="Group" transform="translate(23.000000, 7.000000)" fill="#FFFFFF">
+                <polygon id="Path-3" transform="translate(10.978486, 24.934546) rotate(-6.000000) translate(-10.978486, -24.934546) " points="8.0144749 1.75646341 16.6313977 1.75646341 12.0195861 21.3663861 19.5474943 21.3663861 8.0144749 48.1126278 10.2121773 27.1090114 2.40947696 27.1090114"></polygon>
+            </g>
+            <path d="M1.03022175,43.5510438 L22.6535712,54.0075662 L22.8073299,54.2848355 C26.4299744,60.817461 29.8728998,64 33,64 C36.1456157,64 39.7975676,60.7975206 43.8134846,54.2471319 L43.9636214,54.0022427 L64.9679843,43.5595604 C65.4341812,29.3396945 60.9092373,19.7472155 52.704493,13.9713143 C46.8117969,9.82302787 39.4582705,8 32.9976473,8 C27.7645364,8 19.8303687,10.4382018 13.7222737,14.9138697 C5.28468772,21.0964574 0.56963851,30.5020785 1.03022175,43.5510438 Z" id="Path-2" stroke="#FFFFFF" stroke-width="2"></path>
+            <polyline id="Path-4" stroke="#FFFFFF" stroke-width="2" points="43 9.61294034 64 0 60.3561965 22.1500382"></polyline>
+            <polyline id="Path-4-Copy" stroke="#FFFFFF" stroke-width="2" transform="translate(12.696020, 11.500000) scale(-1, 1) translate(-12.696020, -11.500000) " points="2 9.97574576 23.3920392 0 19.5378349 23"></polyline>
+        </g>
+    </g>
 </svg>

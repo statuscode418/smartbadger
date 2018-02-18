@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from .views import SampleBadgeView
+
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path(r'', include('badges.urls')),
-    path(r'', include('contracts.urls')),
+    path('sample.svg', SampleBadgeView.as_view(), name='sample'),
 ]

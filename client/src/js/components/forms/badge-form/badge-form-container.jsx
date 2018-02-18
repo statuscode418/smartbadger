@@ -9,7 +9,7 @@ import BadgeForm from './presentation/badge-form'
 class BadgeFormContainer extends React.Component {
 
   generateMarkdown(contractAddress, type) {
-    return `[![SMART BADGER]${config.api.url}/${type}.svg)](https://etherscan.io/address/${contractAddress})`
+    return `[![SMART BADGER](${config.api.url}/${type}.svg)](https://etherscan.io/address/${contractAddress})`
   }
 
   async generateBadges(contractAddress) {  

@@ -1,5 +1,8 @@
 from django.conf import settings
+from django.core.cache import cache
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from django.views import View
 import web3
 
@@ -19,6 +22,11 @@ class SampleBadge(Badge):
 class BalanceBadge(Badge):
     """Returns the balance of the address in ether."""
     def get(self, request, address):
+        key = '{}/balance'.format(address)
+        cached = cache.get(key)
+        if cached:
+            return HttpResponse(cached, content_type='image/svg+xml')
+
         if not web3.Web3.isAddress(address):
             attrs = {'text': 'Invalid Address'}
             return render(request, self.template, attrs, content_type='image/svg+xml')
@@ -28,7 +36,9 @@ class BalanceBadge(Badge):
         attrs = {
             'text': '{:.6f} Ether'.format(balance),
         }
-        return render(request, self.template, attrs, content_type='image/svg+xml')
+        rendered = render_to_string(self.template, attrs)
+        cache.set(key, rendered)
+        return HttpResponse(rendered, content_type='image/svg+xml')
 
 
 def magnitude_format(number):
@@ -44,6 +54,11 @@ def magnitude_format(number):
 class DailyTransactionsBadge(Badge):
     """Returns an estimate of daily transactions."""
     def get(self, request, address):
+        key = '{}/activity'.format(address)
+        cached = cache.get(key)
+        if cached:
+            return HttpResponse(cached, content_type='image/svg+xml')
+
         if not web3.Web3.isAddress(address):
             attrs = {'text': 'Invalid Address'}
             return render(request, self.template, attrs, content_type='image/svg+xml')
@@ -56,4 +71,6 @@ class DailyTransactionsBadge(Badge):
         attrs = {
             'text': '{} Daily Txs'.format(magnitude_format(activity)),
         }
-        return render(request, self.template, attrs, content_type='image/svg+xml')
+        rendered = render_to_string(self.template, attrs)
+        cache.set(key, rendered)
+        return HttpResponse(rendered, content_type='image/svg+xml')

@@ -9,14 +9,17 @@ eth-abi==0.5.0
 eth-keys==0.1.0b4
 eth-tester==0.1.0b11
 eth-utils==0.7.4
+gunicorn==19.7.1
 idna==2.6
 lru-dict==1.1.6
 Markdown==2.6.11
 pysha3==1.0.2
+python-memcached==1.59
 pytz==2018.3
 requests==2.18.4
 rlp==0.6.0
 semantic-version==2.6.0
+six==1.11.0
 toolz==0.9.0
 urllib3==1.22
 web3==3.16.5

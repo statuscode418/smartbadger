@@ -13,6 +13,13 @@ source .env/bin/activate
 pip install -r requirements.txt
 ```
 
+Add a `local_settings.py` file in the `/server/server` directory, alongside the existing `settings.py` file:
+
+```py
+PROVIDER_URL = '<http_provider_url>'
+```
+
+
 ## Testing
 
 In the `/server` directory with `manage.py`:

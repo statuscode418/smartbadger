@@ -2,9 +2,9 @@ from datetime import datetime
 
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from django.utils import timezone
 from eth_utils import is_address
 import requests
+from requests.exceptions import RequestException
 from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.renderers import JSONRenderer
@@ -51,7 +51,12 @@ def get_daily_activity(address):
         'address': address,
         'apikey': settings.ETHERSCAN_TOKEN,
     }
-    r = requests.get(etherscan_uri, params=params)
+
+    try:
+        r = requests.get(etherscan_uri, params=params)
+    except RequestException:
+        return None
+
     if r.status_code != 200:
         return None
 
@@ -76,7 +81,7 @@ def get_daily_activity(address):
     # Otherwise we will estimate the daily activity in the past week
     # This will give a lower than expected number for contracts less
     # than a week old
-    elapsed = (timezone.now() - start_time).seconds
+    elapsed = (datetime.now() - start_time).seconds
     if not elapsed:
         # Should never happen, but don't divide by zero, ever
         return None

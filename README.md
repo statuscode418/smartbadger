@@ -1,6 +1,8 @@
 # SmartBadger Contract Explorer
 
-This application provides a unique and insightful approach to help understand specific metrics for a smart contract's specific activity. We condense certain data points into GH badges which are shown below.
+This application provides a unique and insightful approach to help understand metrics for a smart contract's activity. We condense certain data points into GitHub badges which are shown below.
+
+Ultimately, this app will serve as a source of contract verification, a visualization of smart contract behavior over time, and a resource of contract utility. 
 
 ## Installation Client
 

@@ -1,13 +1,12 @@
-import { get, post, put } from 'requests';
-// import * as config from "config/config.json";
+import { get, post, put, request } from 'requests'
 
 export class WebService {
-  checkEmailAvailability = async email => {
+  getBadge = async () => {
     try {
-      const res = await get('/user/email/available', { value: email });
-      return Promise.resolve(res.data.available);
+      const res = await get('/sample.svg')
+      return Promise.resolve(res.data)
     } catch (err) {
-      throw new Error(err);
+      throw new Error(err)
     }
   }
 

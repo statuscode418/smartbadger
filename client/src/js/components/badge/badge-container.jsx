@@ -33,7 +33,6 @@ class BadgeContainer extends React.Component {
   };
 
   updateBadge = (markdown, badge) => {
-    console.log(badge, markdown)
     this.setState({
       markdown,
       badge
@@ -51,7 +50,7 @@ class BadgeContainer extends React.Component {
           { badge && markdown && (
             <div>
               <h3> Your Badge: </h3>
-              <a href={ link } target='_blank' ><img src={ svg } alt='svg'/></a>
+              <a href={link} target='_blank' dangerouslySetInnerHTML={{ __html: svg}}></a>
               <h3> Markdown for README: </h3>
               <blockquote> <code> {markdown} </code> </blockquote> 
             </div>

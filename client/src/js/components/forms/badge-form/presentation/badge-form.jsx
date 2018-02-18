@@ -23,8 +23,8 @@ const BadgeForm = props => {
       />
       <Button
         onClick={props.submitForm}
-        contents='Submit Button'
-        className='AuthForm-submit-button u-justify-center btn-badger'
+        contents='Submit'
+        className='u-justify-center btn-badger'
       />
     </form>
   )

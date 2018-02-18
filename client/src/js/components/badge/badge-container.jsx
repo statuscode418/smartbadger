@@ -41,7 +41,7 @@ class BadgeContainer extends React.Component {
 
   render() {
     const { badge, markdown } = this.state
-    const { svg, link } = badge
+    const { generic, balance, link } = badge
     return (
       <div className='Home'>
         <div className='Home-content'>
@@ -50,7 +50,9 @@ class BadgeContainer extends React.Component {
           { badge && markdown && (
             <div>
               <h3> YOUR BADGE & MARKDOWN:  </h3>
-              <a href={link} target='_blank' dangerouslySetInnerHTML={{ __html: svg}}></a>
+              <a href={link} target='_blank' dangerouslySetInnerHTML={{ __html: generic}}></a>
+              <br></br>
+              <a href={link} target='_blank' dangerouslySetInnerHTML={{ __html: balance}}></a>
               <blockquote> <code> {markdown} </code> </blockquote> 
             </div>
           )}

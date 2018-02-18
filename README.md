@@ -5,9 +5,9 @@ This application provides a unique and insightful approach to help understand sp
 ## Installation Client
 
 1. Navigate into `/client`
-1. Install dependencies with `yarn install`
+1. Install dependencies with `yarn install` || `npm install`
 1. Copy over any configuration from config-sample.json into a new config.json file within `/config`. If you're not running a server on localhost:3000, make sure you point it to the correct api url.
-1. Start webpack with `yarn dev`. By default, it's served on port 8080.
+1. Start webpack with `yarn dev` || `npm run dev`. By default, it's served on port 8080.
 
 
 ## Installation Server

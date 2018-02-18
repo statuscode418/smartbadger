@@ -13,9 +13,9 @@ async function request(method, endpoint, data = {}) {
 
 export async function get(endpoint, params = {}) {
   const url = config.api.url + endpoint;
-  params['version'] = params['version'] || config.api.version;
+  // params['version'] = params['version'] || config.api.version;
   return axios({
-    withCredentials: true,
+    // withCredentials: true,
     method: 'get',
     url: url,
     params: params

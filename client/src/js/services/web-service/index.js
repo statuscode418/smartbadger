@@ -1,25 +1,29 @@
-import { get, post, put } from 'requests';
-// import * as config from "config/config.json";
+import { get, post, put, request } from 'requests'
 
 export class WebService {
-  checkEmailAvailability = async email => {
+  getSampleBadge = async () => {
     try {
-      const res = await get('/user/email/available', { value: email });
-      return Promise.resolve(res.data.available);
+      const res = await get('/sample.svg')
+      console.log(res)
+      return Promise.resolve(res.data)
     } catch (err) {
-      throw new Error(err);
+      throw new Error(err)
     }
   }
-
-  login = async ({ username, password, twoFactorSecret }) => {
-    const data = {
-      username: username,
-      password: password
-    };
-    if (twoFactorSecret && twoFactorSecret.length) {
-      data['twoFactor'] = twoFactorSecret;
+  getBalanceBadge = async (contractAddress) => {
+    try {
+      const res = await get(`/${contractAddress}/balance.svg`)
+      return Promise.resolve(res.data)
+    } catch (err) {
+      throw new Error(err)
     }
-    return post('/user/login', data);
-  };
-
+  }
+  getActivityBadge = async (contractAddress) => {
+    try {
+      const res = await get(`/${contractAddress}/activity.svg`)
+      return Promise.resolve(res.data)
+    } catch (err) {
+      throw new Error(err)
+    }
+  }
 }

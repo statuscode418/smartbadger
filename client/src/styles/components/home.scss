@@ -33,6 +33,7 @@ HOME
     display: grid;
     grid-template: 1fr / #{$sidebar-width} 1fr;
     color: #2599FF;
+    padding: 10px;
   }
 
   h3 {

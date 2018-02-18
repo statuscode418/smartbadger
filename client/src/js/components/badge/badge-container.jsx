@@ -8,8 +8,7 @@ import BadgeFormContainer from '../forms/badge-form/badge-form-container'
 
 class BadgeContainer extends React.Component {
   state = {
-    badge: '',
-    markdown: ''
+    badges: [],
   }
 
   componentWillReceiveProps = async newProps => {
@@ -32,27 +31,31 @@ class BadgeContainer extends React.Component {
     }
   };
 
-  updateBadge = (markdown, badge) => {
-    console.log(badge, markdown)
+  updateBadge = (badges) => {
     this.setState({
-      markdown,
-      badge
+      badges
     })
   }
 
   render() {
-    const { badge, markdown } = this.state
-    const { svg, link } = badge
+    const { badges } = this.state
+    const deconstructedBadges = badges.map((badge, i) => {
+        return (
+        <div key={i}>
+          <a href={badge.link} target='_blank' dangerouslySetInnerHTML={{ __html: badge.badge }}></a>
+          <br></br>
+          <blockquote> <code> {badge.md} </code> </blockquote>
+        </div> )
+      })
     return (
       <div className='Home'>
         <div className='Home-content'>
           <h2>CREATE A BADGE</h2>
           <BadgeFormContainer updateBadge={this.updateBadge}/>
-          { badge && markdown && (
+          { badges.length && (
             <div>
-              <h3> YOUR BADGE & MARKDOWN: </h3>
-              <a href={ link } target='_blank' ><img src={ svg } alt='svg'/></a>
-              <blockquote> <code> {markdown} </code> </blockquote>
+              <h3> YOUR BADGES & MARKDOWN: </h3>
+              { deconstructedBadges } 
             </div>
           )}
         </div>
